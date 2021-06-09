@@ -41,6 +41,7 @@ export default createSchema({
           name: "title",
           type: "string",
           title: "Title",
+          validation: (Rule) => Rule.required().min(10).max(80),
         },
         {
           name: "subtitle",
@@ -59,17 +60,26 @@ export default createSchema({
           name: "date",
           type: "datetime",
           title: "Date",
+          validation: (Rule) => {
+            return Rule.required();
+          },
         },
         {
           name: "author",
           title: "Author",
           type: "reference",
           to: [{ type: "author" }],
+          validation: (Rule) => {
+            return Rule.required();
+          },
         },
         {
           name: "slug",
           type: "slug",
           title: "Slug",
+          validation: (Rule) => {
+            return Rule.required();
+          },
         },
       ],
     },
