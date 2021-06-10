@@ -57,6 +57,32 @@ export default createSchema({
           },
         },
         {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [
+            {
+              type: "block",
+            },
+            {
+              type: "image",
+              fields: [
+                {
+                  name: "alt",
+                  title: "Description",
+                  type: "text",
+                  options: {
+                    isHighlighted: true,
+                  },
+                },
+              ],
+              options: {
+                hotspot: true,
+              },
+            },
+          ],
+        },
+        {
           name: "date",
           type: "datetime",
           title: "Date",
