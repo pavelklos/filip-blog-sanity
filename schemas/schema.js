@@ -55,6 +55,13 @@ export default createSchema({
           options: {
             hotspot: true,
           },
+          fields: [
+            {
+              name: "alt",
+              title: "Description",
+              type: "text",
+            },
+          ],
         },
         {
           name: "content",
@@ -78,6 +85,12 @@ export default createSchema({
               ],
               options: {
                 hotspot: true,
+              },
+            },
+            {
+              type: "code",
+              options: {
+                withFilename: true,
               },
             },
           ],
